@@ -5,8 +5,8 @@ from datetime import datetime # 시간 변환
 WEATHER_API_KEY = os.getenv("WEATHER_API_KEY")
 city = "Seoul"
 url = f"https://api.openweathermap.org/data/2.5/weather?q={city}&appid={WEATHER_API_KEY}&units=metric"
-response = requests.get(url)
-result = response.json()
+response = requests.get(url) # get방식으로 요청 후 응답 받음
+result = response.json() # 받은 응답을 json 형식으로 result에 저장
 temp = result["main"]["temp"] # 현재 기온
 humidity = result["main"]["humidity"] # 습도
 weather = result["weather"][0]["main"] # 날씨 상태
